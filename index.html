@@ -37,8 +37,8 @@
             color: var(--label-primary);
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            align-items: flex-start;
+            min-height: 100dvh;
             overflow: hidden;
         }
 
@@ -56,39 +56,77 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: calc(24px + env(safe-area-inset-top)) 24px calc(20px + env(safe-area-inset-bottom)) 24px;
+            /* 상단 마진 어색하지 않게 패딩 최소화 처리 */
+            padding: calc(12px + env(safe-area-inset-top)) 24px calc(16px + env(safe-area-inset-bottom)) 24px;
         }
 
-        /* 1. 상단 타이틀 영역 고정 */
         .top-section {
             flex-shrink: 0;
         }
 
-        /* 요소간 간격 4px 유지 */
         .header-group {
             display: flex;
             flex-direction: column;
             gap: 4px;
         }
 
-        /* 볼드 / 스트롱 / 28px / 높이 37px */
+        /* 타이틀 사양 적용 */
         .navigation-title {
             font-size: 28px;
             font-weight: 700;
             letter-spacing: -0.5px;
             color: var(--label-strong);
             line-height: 37px;
+            display: block;
         }
 
-        /* 레굴러 / 세컨더리 / 17px / 높이 25.5px */
+        /* 타이틀 우측 흐름에 붙는 콤팩트 인라인 번호판 디자인 */
+        .InlinePlate {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--background-default);
+            border: 1.5px solid var(--label-strong);
+            border-radius: 6px;
+            height: 30px;
+            padding: 0 24px;
+            position: relative;
+            vertical-align: middle;
+            margin-left: 2px;
+            margin-top: -4px;
+            box-shadow: 0 2px 4px rgba(0, 35, 61, 0.04);
+        }
+
+        .PlateBolt {
+            width: 4px;
+            height: 4px;
+            background-color: var(--background-lower);
+            border: 0.5px solid var(--border-default);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .PlateBolt.left { left: 6px; }
+        .PlateBolt.right { right: 6px; }
+
+        .PlateText {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--label-strong);
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        /* 서브텍스트 사양 적용 */
         .navigation-subtext {
             font-size: 17px;
             font-weight: 400;
             color: var(--label-secondary);
             line-height: 25.5px;
+            margin-top: 2px;
         }
 
-        /* 2. 중앙 퀵 메시지 영역 고정 크기 및 정렬 */
         .middle-section {
             display: flex;
             flex-direction: column;
@@ -182,7 +220,6 @@
             flex-shrink: 0;
         }
 
-        /* 3. 하단 액션 버튼 영역 고정 */
         .bottom-action {
             gap: 10px;
             flex-shrink: 0;
@@ -227,7 +264,14 @@
         
         <div class="top-section">
             <div class="header-group">
-                <h1 class="navigation-title">Contact<br>Driver of 123가 4567</h1>
+                <h1 class="navigation-title">
+                    Contact Driver of
+                    <span class="InlinePlate">
+                        <span class="PlateBolt left"></span>
+                        <span class="PlateText">123가 4567</span>
+                        <span class="PlateBolt right"></span>
+                    </span>
+                </h1>
                 <p class="navigation-subtext">Your phone number stays<br>private and protected</p>
             </div>
         </div>
