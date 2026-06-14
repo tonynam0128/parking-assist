@@ -35,10 +35,7 @@
         body {
             background-color: var(--background-lower);
             color: var(--label-primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            min-height: 100dvh;
             overflow: hidden;
         }
 
@@ -48,31 +45,32 @@
             width: 100%;
         }
 
+        /* 모바일 친화적 상하단 고정 레이아웃 수정 */
         .phone-container {
             max-width: 393px; 
             width: 100%;
             height: 100dvh;
+            margin: 0 auto; /* 데스크톱 가운데 정렬 및 모바일 상단 밀착 */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: calc(20px + env(safe-area-inset-top)) 20px calc(20px + env(safe-area-inset-bottom)) 20px;
+            padding: 12px 20px calc(16px + env(safe-area-inset-bottom)) 20px; /* 상단 여백 최소화 */
         }
 
-        /* 1. 상단 영역 고정 */
         .top-section {
-            gap: 20px;
+            gap: 16px;
             flex-shrink: 0;
         }
 
-        /* 요청 사양 반영: 요소간 간격 4px */
+        /* 요소간 간격 4px 반영 */
         .header-group {
             display: flex;
             flex-direction: column;
             gap: 4px;
-            padding-left: 4px;
+            padding-left: 2px;
         }
 
-        /* 요청 사양 반영: 볼드 / 스트롱 / 28px / 높이 37px */
+        /* 볼드 / 스트롱 / 28px / 높이 37px 반영 */
         .navigation-title {
             font-size: 28px;
             font-weight: 700;
@@ -81,7 +79,7 @@
             line-height: 37px;
         }
 
-        /* 요청 사양 반영: 레귤러 / 세컨더리 / 17px / 높이 25.5px */
+        /* 레귤러 / 세컨더리 / 17px / 높이 25.5px 반영 */
         .navigation-subtext {
             font-size: 17px;
             font-weight: 400;
@@ -123,14 +121,13 @@
             word-spacing: 4px;
         }
 
-        /* 2. 중앙 영역 세로 가운데 정렬 */
         .middle-section {
             display: flex;
             flex-direction: column;
             justify-content: center;
             flex-grow: 1;
             overflow-y: auto;
-            padding: 16px 0;
+            padding: 12px 0;
         }
 
         .section-title {
@@ -217,10 +214,10 @@
             flex-shrink: 0;
         }
 
-        /* 3. 하단 버튼 영역 고정 */
         .bottom-action {
             gap: 10px;
             flex-shrink: 0;
+            padding-top: 8px;
         }
 
         .Button {
