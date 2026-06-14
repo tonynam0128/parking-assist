@@ -69,6 +69,7 @@
             gap: 4px;
         }
 
+        /* 타이틀 의도된 줄바꿈 반영 */
         .navigation-title {
             font-size: 28px;
             font-weight: 700;
@@ -77,6 +78,7 @@
             line-height: 37px;
         }
 
+        /* 인라인 번호판 정렬 최적화 */
         .InlinePlate {
             display: inline-flex;
             align-items: center;
@@ -87,7 +89,7 @@
             padding: 0 20px;
             position: relative;
             vertical-align: middle;
-            margin-left: 4px;
+            margin-left: 2px;
             margin-top: -3px;
             box-shadow: 0 2px 4px rgba(0, 35, 61, 0.04);
         }
@@ -253,7 +255,7 @@
             color: var(--fill-main);
         }
 
-        /* 은은한 서비스 출처 표기를 위한 푸터 디자인 시스템 */
+        /* 미니멀 톤앤매너 푸터 */
         .brand-footer {
             display: flex;
             align-items: center;
@@ -266,8 +268,7 @@
         }
 
         .brand-logo {
-            height: 13px; /* 텍스트 높이와 일치시켜 시각 균형 확보 */
-            /* 원색 blue가 튀지 않도록 무채색화 및 투명도 32% 처리 */
+            height: 13px;
             filter: grayscale(100%) contrast(80%);
             opacity: 0.32;
         }
@@ -280,7 +281,8 @@
         <div class="top-section">
             <div class="header-group">
                 <h1 class="navigation-title">
-                    Contact driver of
+                    Contact<br>
+                    driver of
                     <span class="InlinePlate">
                         <span class="PlateBolt left"></span>
                         <span class="PlateText">123가 4567</span>
@@ -348,7 +350,7 @@
             <a href="sms:01012345678" class="Button secondary">Text Driver</a>
             
             <div class="brand-footer">
-                <span>powered by</span>
+                <span>by</span>
                 <img src="logo.svg" class="brand-logo" alt="took">
             </div>
         </div>
